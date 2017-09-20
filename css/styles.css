@@ -1,0 +1,137 @@
+body {
+  background-color: #3498db;
+  /* C to f toggle button */ }
+  body header {
+    width: 100%;
+    height: 3.125em;
+    position: fixed;
+    top: 0;
+    left: 0; }
+    body header .cityandswitch {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      body header .cityandswitch h1 {
+        padding-left: 0.5em;
+        margin-bottom: 0.25em; }
+      body header .cityandswitch .switch {
+        margin-right: 1em;
+        padding-top: 1.25em;
+        margin-bottom: 0.25em; }
+    body header h4 {
+      display: inline-block;
+      padding: 0.25em;
+      margin: 0;
+      padding-left: 0.5em; }
+  body #temp {
+    height: 6em;
+    width: 100%;
+    margin-top: 11em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    /* center horizontally */
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    /* center vertically */ }
+    body #temp h1 {
+      padding: 0;
+      font-size: 6em; }
+  body #bottom {
+    width: 100%;
+    height: 8em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center; }
+    body #bottom .weatherInfo {
+      display: inline-block;
+      padding: 0.25em;
+      margin: 0;
+      height: 6em;
+      width: 3.75em;
+      text-align: center;
+      margin-top: 0.65em;
+      vertical-align: top; }
+      body #bottom .weatherInfo .number {
+        padding: 1em 1em 1.45em; }
+  body .cmn-toggle {
+    position: absolute;
+    margin-left: -624.9375em;
+    visibility: hidden; }
+  body .cmn-toggle + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  body input.cmn-toggle-c-f + label {
+    padding: 0.132em;
+    width: 3.594em;
+    height: 1.75em; }
+  body input.cmn-toggle-c-f + label:after,
+  body input.cmn-toggle-c-f + label:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: black;
+    font-family: "Roboto Slab", serif;
+    font-size: 1em;
+    text-align: center;
+    line-height: 1.75em; }
+  body input.cmn-toggle-c-f + label:before {
+    background-color: #d35400;
+    content: attr(data-off);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  body input.cmn-toggle-c-f + label:after {
+    background-color: #c0392b;
+    content: attr(data-on);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  body input.cmn-toggle-c-f:checked + label:before {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg); }
+  body input.cmn-toggle-c-f:checked + label:after {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0); }
