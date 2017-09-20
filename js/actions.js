@@ -12,7 +12,7 @@ $(document).ready(function() {
   var clouds = "";
 
   //url to retrieve icons
-  var originalIconUrl = "http://openweathermap.org/img/w/";
+  var originalIconUrl = "https://openweathermap.org/img/w/";
   var iconUrl = originalIconUrl;
 
   //retrieves time from browser, formats hours & am/pm
