@@ -37,6 +37,8 @@ $(document).ready(function() {
   var metricFormat = "&units=metric";
   var imperialFormat = "&units=imperial"
   var currentFormat = imperialFormat;
+  timeToScreen += hours + ":" + minutes + " " + dayOrNight;
+
 
   //openweathermap api key
   var localWeatherKey = "&APPID=09a82f5d502a21a066b9f607f9aafd04";
@@ -115,7 +117,6 @@ $(document).ready(function() {
     //set variables with data to be sent to html
     currentT = currentWeather.main.temp;
     currentTemp = Math.round(currentT * 10) / 10;
-    timeToScreen += hours + ":" + minutes + " " + dayOrNight;
     city += currentWeather.name;
     currentCondition += currentWeather.weather[0].main;
     humidity += currentWeather.main.humidity + "%";
@@ -138,6 +139,7 @@ $(document).ready(function() {
     function prettyDate2(time) {
       var date = new Date(parseInt(time));
       var localeSpecificTime = date.toLocaleTimeString();
+      //console.log(localeSpecificTime.replace(/:\d+ /, ' '));
       return localeSpecificTime.replace(/:\d+ /, ' ');
     }
 
@@ -236,7 +238,6 @@ $(document).ready(function() {
       timeString = "";
       time = new Date(time);
       hours = time.getUTCHours();
-
       //revieve offset determine if I need to add or subtract hours
       //set offset to absolute value
       if (offset > 0) {
@@ -260,7 +261,9 @@ $(document).ready(function() {
     }
     //calls buildTime on each sunset-sunrise
     var sunrise = buildTime(utcSunrise);
+    //console.log(sunrise);
     var sunset = buildTime(utcSunset);
+    //console.log(sunset);
     //sends to screen
     $(".sunrise").html(sunrise);
     $(".sunset").html(sunset);
@@ -271,7 +274,7 @@ $(document).ready(function() {
   //learned yet
   function dataReset() {
     apiUrl = originalApiUrl;
-    timeToScreen = "";
+    //timeToScreen = "";
     city = "";
     currentCondition = "";
     iconUrl = originalIconUrl;
